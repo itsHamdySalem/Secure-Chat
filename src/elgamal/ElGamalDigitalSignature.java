@@ -6,8 +6,6 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
 public class ElGamalDigitalSignature {
-    private static final BigInteger ONE = BigInteger.ONE;
-
     private BigInteger p; // Prime modules
     private BigInteger g; // Generator
     private BigInteger x; // Private key
