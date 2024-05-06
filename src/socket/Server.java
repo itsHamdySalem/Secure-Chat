@@ -22,8 +22,8 @@ public class Server {
     private static final int MAX_CLIENTS = 2;
     private static final String DH_PARAMETERS_FILE = "resources\\parameters\\dh_parameters.txt";
     private static final String ELGAMAL_PARAMETERS_FILE = "resources\\parameters\\elgamal_parameters.txt";
-    private static final BigInteger P = new BigInteger("23");
-    private static final BigInteger G = new BigInteger("5");
+    private static final BigInteger P = new BigInteger("999999999989");
+    private static final BigInteger G = new BigInteger("69");
 
     public static Set<PrintWriter> clientWriters = new HashSet<>();
 
