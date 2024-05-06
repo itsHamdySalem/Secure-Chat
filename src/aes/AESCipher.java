@@ -1,10 +1,10 @@
 package aes;
 
-import java.util.Arrays;
 import java.util.Base64;
 import javax.crypto.Cipher;
 import java.math.BigInteger;
 import javax.crypto.SecretKey;
+import java.security.MessageDigest;
 import javax.crypto.spec.SecretKeySpec;
 import javax.crypto.BadPaddingException;
 import java.security.InvalidKeyException;
@@ -15,13 +15,14 @@ import java.security.NoSuchAlgorithmException;
 public class AESCipher {
     private SecretKey secretKey;
 
-    private SecretKeySpec generateAESKeyFromBigInt(BigInteger bigInt) {
+    private SecretKeySpec generateAESKeyFromBigInt(BigInteger bigInt) throws NoSuchAlgorithmException {
         byte[] sharedSecretBytes = bigInt.toByteArray();
-        byte[] keyBytes = Arrays.copyOf(sharedSecretBytes, 32);
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        byte[] keyBytes = digest.digest(sharedSecretBytes);
         return new SecretKeySpec(keyBytes, "AES");
     }
 
-    public AESCipher(BigInteger sharedSecretInt) {
+    public AESCipher(BigInteger sharedSecretInt) throws NoSuchAlgorithmException {
         this.secretKey = generateAESKeyFromBigInt(sharedSecretInt);
     }
 
