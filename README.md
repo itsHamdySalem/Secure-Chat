@@ -21,23 +21,29 @@ To run the Secure Chat application, follow these steps:
    cd Secure-Chat
    ```
 
-3. **Start the Server:** Open a terminal and run the Server class:
+3. **Build the Project:** Compile source files:
 
    ```bash
-   java .\src\socket\Server.java
+   make build
+   ```
+
+4. **Start the Server:** Open a terminal and run the Server class:
+
+   ```bash
+   make run-server
    ```
 
 4. **Start the Clients:** Open two separate terminals and run the Client class in each terminal:
 
    ```bash
-   java .\src\socket\Client.java
+   make run-client
    ```
 
 5. **Start Chatting:** Once both clients are connected to the server, you can start chatting securely!
 
 ## Dependencies
 - Java Development Kit (JDK) 8 or later
-- Git (for cloning the repository)
+- Make
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
